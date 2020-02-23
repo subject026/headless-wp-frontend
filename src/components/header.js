@@ -1,20 +1,10 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import styled from "styled-components"
+
 import PageWrap from "./styled/PageWrap"
 
-const Header = styled.header`
-  height: 60px;
-  display: flex;
-  align-items: center;
-  a {
-    color: #202020;
-    font-size: 20px;
-    text-decoration: none;
-    font-weight: 600;
-  }
-`
+import Header from "./styled/Header"
 
 const Component = ({ siteTitle }) => (
   <Header>

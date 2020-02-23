@@ -4,24 +4,9 @@ import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({ yoast_wpseo_title, yoast_wpseo_metadesc, lang, meta }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  )
-
   const title = yoast_wpseo_title
   const description = yoast_wpseo_metadesc
-
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description
 
   return (
     <Helmet
@@ -29,7 +14,7 @@ function SEO({ yoast_wpseo_title, yoast_wpseo_metadesc, lang, meta }) {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s | headless-wp`}
       meta={[
         {
           name: `description`,

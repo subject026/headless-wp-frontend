@@ -49,5 +49,6 @@ module.exports = {
         useACF: true,
       },
     },
+    `gatsby-plugin-catch-links`,
   ],
 }

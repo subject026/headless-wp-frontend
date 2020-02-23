@@ -3,27 +3,11 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import styled from "styled-components"
 
+import Content from "../components/Content"
 import PageWrap from "../components/styled/PageWrap"
+import Hero from "../components/styled/Hero"
 
-const Hero = styled.section`
-  width: 100%;
-  max-height: 500px;
-  padding: 0;
-  overflow: hidden;
-  h1 {
-    font-size: 85px;
-    position: absolute;
-    z-index: 10;
-    color: white;
-    font-weight: 200;
-  }
-`
-const Content = styled.section`
-  z-index: 20;
-  background-color: white;
-`
 const IndexPage = ({ data }) => {
   const {
     title,
@@ -50,7 +34,15 @@ const IndexPage = ({ data }) => {
         </PageWrap>
         <Img fluid={fluid} />
       </Hero>
-      <Content dangerouslySetInnerHTML={{ __html: `${content}` }} />
+      <Content content={content} />
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/73Neq8EoQdY"
+        frameBorder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
       <Link to="/additional-page/">Go to page 2</Link>
     </Layout>
   )
@@ -69,7 +61,7 @@ export const query = graphql`
         featured_image {
           localFile {
             childImageSharp {
-              fluid(maxWidth: 2000) {
+              fluid(maxWidth: 2000, maxHeight: 800) {
                 ...GatsbyImageSharpFluid
               }
               fixed(height: 500) {
