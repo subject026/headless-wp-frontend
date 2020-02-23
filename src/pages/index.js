@@ -35,14 +35,14 @@ const IndexPage = ({ data }) => {
         <Img fluid={fluid} />
       </Hero>
       <Content content={content} />
-      <iframe
+      {/* <iframe
         width="560"
         height="315"
         src="https://www.youtube.com/embed/73Neq8EoQdY"
         frameBorder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
-      ></iframe>
+      ></iframe> */}
       <Link to="/additional-page/">Go to page 2</Link>
     </Layout>
   )
