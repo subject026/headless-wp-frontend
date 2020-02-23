@@ -20,7 +20,7 @@ export default ({ content }) => {
       {ReactHTMLParser(content)}
       <Container>
         <video controls autoplay loop>
-          <source data-src={leaves} type="video/mp4" />
+          <source src={leaves} type="video/mp4" />
         </video>
       </Container>
     </>
