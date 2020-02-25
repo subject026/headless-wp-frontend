@@ -3,6 +3,7 @@ import ReactHTMLParser from "react-html-parser"
 
 import leaves from "../images/leaves.mp4"
 import styled from "styled-components"
+import Carousel from "./Carousel"
 
 const Container = styled.div`
   video {
@@ -23,6 +24,7 @@ export default ({ content }) => {
           <source src={leaves} type="video/mp4" />
         </video>
       </Container>
+      <Carousel />
     </>
   )
 }
